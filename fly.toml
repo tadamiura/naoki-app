@@ -2,9 +2,7 @@ app = "naoki-app"
 primary_region = "cdg"
 
 [build]
-  [build.args]
-    NODE_VERSION = "22"
-    PHP_VERSION = "8.4"
+  dockerfile = "Dockerfile"
 
 [env]
   APP_ENV = "production"

@@ -47,6 +47,9 @@ COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN echo '#!/bin/sh\n\
 mkdir -p /data\n\
 touch /data/database.sqlite\n\
+chmod 777 /data\n\
+chmod 666 /data/database.sqlite\n\
+chown -R www-data:www-data /data\n\
 php artisan migrate --force\n\
 php artisan config:cache\n\
 php artisan route:cache\n\
